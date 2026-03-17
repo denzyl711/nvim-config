@@ -1,0 +1,9 @@
+# Neovim
+neovim
+
+# DAP
+debugpy
+
+# LSP
+ruff
+pyright
