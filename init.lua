@@ -128,10 +128,5 @@ vim.api.nvim_create_autocmd("VimEnter", {
 		vim.keymap.set("n", "tl", ":tablast<cr>")
 
 		vim.keymap.set("n", "<leader>dd", vim.diagnostic.setloclist)
-
-		vim.keymap.set("n", "<leader>sn", function()
-			vim.opt.relativenumber = true
-			vim.opt.number = true
-		end)
 	end,
 })

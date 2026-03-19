@@ -17,7 +17,7 @@ return {
     for i = 1, 9 do
       vim.keymap.set('n', '<leader>'..i, function()
         require('bufferline').go_to_buffer(i, true)
-      end, { desc = 'Go to buffer '..i })
+      end)
     end
   end,
 }
