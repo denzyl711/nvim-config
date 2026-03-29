@@ -3,12 +3,12 @@ return {
 		"voldikss/vim-floaterm",
 		keys = {
 			{ "<F60>", desc = "Toggle floaterm" },
-			{ "TT", desc = "New floaterm" },
-			{ "TD", desc = "Kill floaterm" },
-			{ "TK", desc = "Next floaterm" },
-			{ "TJ", desc = "Previous floaterm" },
-			{ "TH", desc = "First floaterm" },
-			{ "TL", desc = "Last floaterm" },
+			{ "<leader>tt", desc = "New floaterm" },
+			{ "<leader>td", desc = "Kill floaterm" },
+			{ "<leader>tk", desc = "Next floaterm" },
+			{ "<leader>tj", desc = "Previous floaterm" },
+			{ "<leader>th", desc = "First floaterm" },
+			{ "<leader>tl", desc = "Last floaterm" },
 		},
 		cmd = { "FloatermNew", "FloatermToggle", "FloatermKill", "FloatermSend" },
 		init = function()

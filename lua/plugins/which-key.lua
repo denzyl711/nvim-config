@@ -28,6 +28,22 @@ return {
         -- Noice & UI toggles
         { '<leader>nd', group = 'Dismiss Notifications', mode = { 'n' } },
         { '<leader>sn', group = 'Show Line Numbers', mode = { 'n' } },
+
+        -- Terminal (floaterm)
+        { '<leader>t', group = '[T]erminal', mode = { 'n' } },
+        { '<leader>tt', desc = 'New Terminal', mode = { 'n' } },
+        { '<leader>td', desc = 'Kill Terminal', mode = { 'n' } },
+        { '<leader>tk', desc = 'Next Terminal', mode = { 'n' } },
+        { '<leader>tj', desc = 'Previous Terminal', mode = { 'n' } },
+        { '<leader>tl', desc = 'Last Terminal', mode = { 'n' } },
+        { '<leader>th', desc = 'First Terminal', mode = { 'n' } },
+
+        -- Claude (AI)
+        { '<leader>c', group = '[C]laude', mode = { 'n' } },
+        { '<leader>cc', desc = 'Toggle Claude Code', mode = { 'n' } },
+        { '<leader>cC', desc = 'Claude Continue', mode = { 'n' } },
+        { '<leader>cr', desc = 'Claude Resume', mode = { 'n' } },
+
       }
 
       -- Hide <leader>1-9 (bufferline mappings) from WhichKey popup
