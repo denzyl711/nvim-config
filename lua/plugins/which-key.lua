@@ -38,6 +38,10 @@ return {
         { '<leader>tl', desc = 'Last Terminal', mode = { 'n' } },
         { '<leader>th', desc = 'First Terminal', mode = { 'n' } },
 
+        -- Git
+        { '<leader>g', group = '[G]it', mode = { 'n' } },
+        { '<leader>gg', desc = 'LazyGit', mode = { 'n' } },
+
         -- Claude (AI)
         { '<leader>c', group = '[C]laude', mode = { 'n' } },
         { '<leader>cc', desc = 'Toggle Claude Code', mode = { 'n' } },
