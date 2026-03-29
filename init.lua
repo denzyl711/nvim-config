@@ -1,3 +1,7 @@
+-- Disable netrw (we use fzf-lua on startup instead)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Show relative line numbers
 vim.opt.relativenumber = true
 vim.opt.number = true
