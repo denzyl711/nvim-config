@@ -58,6 +58,20 @@ else
 	vim.notify("Failed to load theme configuration", vim.log.levels.WARN)
 end
 
+-- Window navigation mappings
+local opts = { noremap = true, silent = true }
+
+-- Normal mode: move between splits using Ctrl + h/j/k/l
+vim.api.nvim_set_keymap("n", "<C-h>", "<C-w>h", opts)
+vim.api.nvim_set_keymap("n", "<C-j>", "<C-w>j", opts)
+vim.api.nvim_set_keymap("n", "<C-k>", "<C-w>k", opts)
+vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", opts)
+-- Terminal mode: allow same keys to move out of terminal splits
+vim.api.nvim_set_keymap("t", "<C-h>", "<C-\\><C-n><C-w>h", opts)
+vim.api.nvim_set_keymap("t", "<C-j>", "<C-\\><C-n><C-w>j", opts)
+vim.api.nvim_set_keymap("t", "<C-k>", "<C-\\><C-n><C-w>k", opts)
+vim.api.nvim_set_keymap("t", "<C-l>", "<C-\\><C-n><C-w>l", opts)
+
 -- Load utility functions
 local utils_status, utils = pcall(require, "utils")
 if utils_status then
@@ -77,6 +91,9 @@ else
 		return "python"
 	end
 end
+
+-- Buffer management
+pcall(require, "config.buffers")
 
 -- Lazy cache python path (only compute once when needed)
 local python_path_cache = nil
