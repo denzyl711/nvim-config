@@ -37,6 +37,8 @@ return {
         { '<leader>tj', desc = 'Previous Terminal', mode = { 'n' } },
         { '<leader>tl', desc = 'Last Terminal', mode = { 'n' } },
         { '<leader>th', desc = 'First Terminal', mode = { 'n' } },
+        { '<F59>', desc = 'Hyper+G — Copilot terminal', mode = { 'n', 't', 'i' } },
+        { '<F60>', desc = 'Hyper+T — toggle terminal', mode = { 'n', 't', 'i' } },
 
         -- Git
         { '<leader>g', group = '[G]it', mode = { 'n' } },
