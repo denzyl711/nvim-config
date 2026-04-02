@@ -29,6 +29,27 @@ return {
 					vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 				end,
 			})
+
+			-- Quickfix keymaps for LSP references
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = "qf",
+				callback = function()
+					-- Enter: jump to reference and close the quickfix window
+					vim.keymap.set("n", "<CR>", function()
+						local idx = vim.fn.line(".")
+						vim.cmd("cclose")
+						vim.cmd(idx .. "cc")
+					end, { buffer = true })
+
+					-- Shift+Enter: open reference but keep cursor in quickfix window
+					vim.keymap.set("n", "<S-CR>", function()
+						local qf_win = vim.api.nvim_get_current_win()
+						local idx = vim.fn.line(".")
+						vim.cmd(idx .. "cc")
+						vim.api.nvim_set_current_win(qf_win)
+					end, { buffer = true })
+				end,
+			})
 		end,
 	},
 }
