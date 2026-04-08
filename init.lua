@@ -2,6 +2,9 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- Ensure treesitter parser install dir is in runtimepath
+vim.opt.runtimepath:append(vim.fn.stdpath("data") .. "/site")
+
 -- Show relative line numbers
 vim.opt.relativenumber = true
 vim.opt.number = true
