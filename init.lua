@@ -127,6 +127,10 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 
+-- Remap macro record to <leader>q (q is used by plugins)
+vim.keymap.set("n", "<leader>q", "q", { noremap = true, desc = "Record macro" })
+vim.keymap.set("n", "q", "<Nop>", { noremap = true })
+
 vim.keymap.set("n", "<leader>f", require("formatting.utils.format"), { noremap = true })
 
 vim.g.completion_matching_strategy_list = { "exact", "substring" }
@@ -154,3 +158,4 @@ vim.api.nvim_create_autocmd("VimEnter", {
 		vim.keymap.set("n", "<leader>dd", vim.diagnostic.setloclist)
 	end,
 })
+
