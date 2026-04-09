@@ -43,16 +43,13 @@ vim.keymap.set("n", "<Space>", "<Nop>", { silent = true, remap = false })
 vim.g.mapleader = " "
 
 -- Toggle term (Need to be configured as globals)
--- Note: <F60> toggle is defined in vim-floaterm.lua keys spec to skip named floaterms
+-- Note: <F60> toggle is defined in vim-floaterm.lua keys spec
 vim.g.floaterm_keymap_new = "TT"
 vim.g.floaterm_keymap_kill = "TD"
 vim.g.floaterm_keymap_next = "TK"
 vim.g.floaterm_keymap_prev = "TJ"
 vim.g.floaterm_keymap_first = "TH"
 vim.g.floaterm_keymap_last = "TL"
-
--- Dedicated Copilot floaterm toggle (Caps+G = option + fn + f11 via Karabiner)
--- Note: keymap is defined in vim-floaterm.lua keys spec to avoid lazy-loading conflicts
 
 vim.keymap.set("t", "<Esc><Esc>", [[<C-\><C-n>]])
 
