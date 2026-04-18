@@ -44,6 +44,32 @@ return {
         { '<leader>g', group = '[G]it', mode = { 'n' } },
         { '<leader>gg', desc = 'LazyGit', mode = { 'n' } },
 
+        -- Diagnostics (Trouble)
+        { '<leader>x', group = 'Diagnostics', mode = { 'n' } },
+        { '<leader>xx', desc = 'Diagnostics', mode = { 'n' } },
+        { '<leader>xX', desc = 'Buffer Diagnostics', mode = { 'n' } },
+        { '<leader>xl', desc = 'Location List', mode = { 'n' } },
+        { '<leader>xq', desc = 'Quickfix List', mode = { 'n' } },
+
+        -- Tests (Neotest)
+        { '<leader>n', group = '[N]eotest', mode = { 'n' } },
+        { '<leader>nn', desc = 'Run Nearest Test', mode = { 'n' } },
+        { '<leader>nf', desc = 'Run File Tests', mode = { 'n' } },
+        { '<leader>ns', desc = 'Test Summary', mode = { 'n' } },
+        { '<leader>no', desc = 'Test Output Panel', mode = { 'n' } },
+
+        -- Harpoon
+        { '<leader>h', desc = 'Add to Harpoon', mode = { 'n' } },
+
+        -- Aerial
+        { '<leader>a', desc = 'Toggle Aerial', mode = { 'n' } },
+
+        -- Undotree
+        { '<leader>u', desc = 'Toggle Undotree', mode = { 'n' } },
+
+        -- TODO Comments
+        { '<leader>ft', desc = 'Find TODOs', mode = { 'n' } },
+
         -- Claude (AI)
         { '<leader>c', group = '[C]laude', mode = { 'n' } },
         { '<leader>cc', desc = 'Toggle Claude Code', mode = { 'n' } },
