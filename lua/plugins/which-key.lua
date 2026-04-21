@@ -37,17 +37,8 @@ return {
         { '<leader>tj', desc = 'Previous Terminal', mode = { 'n' } },
         { '<leader>tl', desc = 'Last Terminal', mode = { 'n' } },
         { '<leader>th', desc = 'First Terminal', mode = { 'n' } },
-        { '<F59>', desc = 'Hyper+G — focus sidekick terminal', mode = { 'n', 't', 'i' } },
-        { '<F60>', desc = 'Hyper+T — toggle shell terminal', mode = { 'n', 't', 'i' } },
-
-        -- Sidekick AI
-        { '<leader>a', group = '[A]I (Sidekick)', mode = { 'n' } },
-        { '<leader>aa', desc = 'Toggle CLI', mode = { 'n' } },
-        { '<leader>as', desc = 'Select CLI tool', mode = { 'n' } },
-        { '<leader>at', desc = 'Send this', mode = { 'n', 'x' } },
-        { '<leader>av', desc = 'Send selection', mode = { 'x' } },
-        { '<leader>af', desc = 'Send file', mode = { 'n' } },
-        { '<leader>ap', desc = 'Select prompt', mode = { 'n', 'x' } },
+        { '<F59>', desc = 'Hyper+G — Copilot terminal', mode = { 'n', 't', 'i' } },
+        { '<F60>', desc = 'Hyper+T — toggle terminal', mode = { 'n', 't', 'i' } },
 
         -- Git
         { '<leader>g', group = '[G]it', mode = { 'n' } },

@@ -7,7 +7,6 @@ return {
 			require("lsp.lua")
 			require("lsp.json")
 			require("lsp.markdown")
-			require("lsp.copilot")
 
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
