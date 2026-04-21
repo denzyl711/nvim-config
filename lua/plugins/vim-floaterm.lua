@@ -28,16 +28,29 @@ local function floaterm_exists(name)
 	return vim.fn["floaterm#terminal#get_bufnr"](name) ~= -1
 end
 
---- Find the last unnamed (non-dedicated) floaterm bufnr
-local function find_unnamed_bufnr()
-	local result = nil
+local function collect_unnamed_bufnrs()
+	local last_bufnr = nil
+	local bufnr_set = {}
 	for _, bufnr in ipairs(vim.fn["floaterm#buflist#gather"]()) do
 		local ok, name = pcall(vim.api.nvim_buf_get_var, bufnr, "floaterm_name")
 		if not ok or not NAMED_FLOATERMS[name] then
-			result = bufnr
+			last_bufnr = bufnr
+			bufnr_set[bufnr] = true
 		end
 	end
-	return result
+	return last_bufnr, bufnr_set
+end
+
+--- Find the last unnamed (non-dedicated) floaterm bufnr
+local function find_unnamed_bufnr()
+	local bufnr = collect_unnamed_bufnrs()
+	return bufnr
+end
+
+--- Return a set of all unnamed floaterm bufnrs
+local function unnamed_bufnr_set()
+	local _, bufnr_set = collect_unnamed_bufnrs()
+	return bufnr_set
 end
 
 --- Ensure the AI CLI floaterm and a plain shell both exist (hidden)
@@ -62,47 +75,35 @@ return {
 			{
 				"<F60>",
 				function()
-					local visible = vim.fn["floaterm#window#find"]() ~= 0
-					if visible then
+					local unnamed = unnamed_bufnr_set()
+					local cur_buf = vim.api.nvim_get_current_buf()
+					local is_floaterm = vim.bo[cur_buf].filetype == "floaterm"
+
+					if is_floaterm and unnamed[cur_buf] then
 						vim.cmd("FloatermHide!")
+						return
+					end
+
+					local bufnr = find_unnamed_bufnr()
+					if bufnr then
+						vim.fn["floaterm#terminal#open_existing"](bufnr)
 					else
-						local bufnr = find_unnamed_bufnr()
-						if bufnr then
-							vim.fn["floaterm#terminal#open_existing"](bufnr)
-						else
-							vim.cmd("FloatermNew")
-						end
+						vim.cmd("FloatermNew")
 					end
 				end,
 				desc = "Hyper+T — toggle shell",
-				mode = { "n", "t", "i" },
-			},
-			{
-				"<F59>",
-				function()
-					vim.cmd("normal! y")
-					local text = vim.fn.getreg('"')
-					if not floaterm_exists(AI_TERM_NAME) then
-						ensure_ai_and_shell()
-					end
-					vim.cmd("FloatermShow " .. AI_TERM_NAME)
-					vim.fn["floaterm#terminal#send"](vim.fn["floaterm#terminal#get_bufnr"](AI_TERM_NAME), { text })
-				end,
-				desc = "Hyper+G — send selection to AI CLI",
-				mode = { "v" },
+				mode = { "n", "t", "i", "v" },
 			},
 			{
 				"<F59>",
 				function()
 					if not floaterm_exists(AI_TERM_NAME) then
 						ensure_ai_and_shell()
-						vim.cmd("FloatermToggle " .. AI_TERM_NAME)
-					else
-						vim.cmd("FloatermToggle " .. AI_TERM_NAME)
 					end
+					vim.cmd("FloatermToggle " .. AI_TERM_NAME)
 				end,
 				desc = "Hyper+G — toggle AI CLI",
-				mode = { "n", "t", "i" },
+				mode = { "n", "t", "i", "v" },
 			},
 			{ "<leader>tt", desc = "New floaterm" },
 			{ "<leader>td", desc = "Kill floaterm" },
