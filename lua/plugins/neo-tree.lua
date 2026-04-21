@@ -23,6 +23,7 @@ return {
       window = {
         mappings = {
           ['\\'] = 'close_window',
+          ['<bs>'] = 'none',
         },
       },
     },
