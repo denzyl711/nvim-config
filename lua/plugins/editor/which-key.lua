@@ -43,6 +43,10 @@ return {
         -- Git
         { '<leader>g', group = '[G]it', mode = { 'n' } },
         { '<leader>gg', desc = 'LazyGit', mode = { 'n' } },
+        { '<leader>gC', desc = 'Git commits', mode = { 'n' } },
+        { '<leader>gb', desc = 'Git branches', mode = { 'n' } },
+        { '<leader>gs', desc = 'Git status', mode = { 'n' } },
+        { '<leader>ggb', desc = 'Toggle Git Blame', mode = { 'n' } },
 
         -- Diagnostics (Trouble)
         { '<leader>x', group = 'Diagnostics', mode = { 'n' } },
@@ -69,6 +73,9 @@ return {
 
         -- TODO Comments
         { '<leader>ft', desc = 'Find TODOs', mode = { 'n' } },
+        { '<leader>fw', desc = 'Grep word under cursor', mode = { 'n' } },
+        { '<leader>fr', desc = 'LSP references', mode = { 'n' } },
+        { '<leader>fd', desc = 'LSP definitions', mode = { 'n' } },
 
         -- Claude (AI)
         { '<leader>c', group = '[C]laude', mode = { 'n' } },
