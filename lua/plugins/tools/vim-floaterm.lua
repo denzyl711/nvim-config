@@ -20,8 +20,7 @@ local dotenv = load_dotenv()
 local AI_CLI = dotenv.AI_CLI or "copilot"
 local AI_TERM_NAME = "ai"
 local NAMED_FLOATERMS = { [AI_TERM_NAME] = true }
-local FLOATERM_BG = "#0d1117"
-local FLOATERM_BORDER_FG = "#1e3a5f"
+local FLOATERM_BG_DARKEN = 15 -- amount to darken theme bg for floaterm (0-255)
 
 --- Check if a named floaterm exists
 local function floaterm_exists(name)
@@ -64,8 +63,20 @@ local function ensure_ai_and_shell()
 end
 
 local function set_floaterm_highlights()
-	vim.api.nvim_set_hl(0, "Floaterm", { bg = FLOATERM_BG })
-	vim.api.nvim_set_hl(0, "FloatermBorder", { bg = FLOATERM_BG, fg = FLOATERM_BORDER_FG })
+	local normal = vim.api.nvim_get_hl(0, { name = "Normal", link = false })
+	local border = vim.api.nvim_get_hl(0, { name = "FloatBorder", link = false })
+
+	local function darken(color)
+		local r = math.max(0, math.floor(color / 0x10000) - FLOATERM_BG_DARKEN)
+		local g = math.max(0, math.floor((color % 0x10000) / 0x100) - FLOATERM_BG_DARKEN)
+		local b = math.max(0, color % 0x100 - FLOATERM_BG_DARKEN)
+		return string.format("#%02x%02x%02x", r, g, b)
+	end
+
+	local bg = normal.bg and darken(normal.bg) or "#0d1117"
+	local border_fg = border.fg and string.format("#%06x", border.fg) or "#1e3a5f"
+	vim.api.nvim_set_hl(0, "Floaterm", { bg = bg })
+	vim.api.nvim_set_hl(0, "FloatermBorder", { bg = bg, fg = border_fg })
 end
 
 return {
