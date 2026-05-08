@@ -128,7 +128,15 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("plugins")
+require("lazy").setup({
+	{ import = "plugins.ui" },
+	{ import = "plugins.git" },
+	{ import = "plugins.lsp" },
+	{ import = "plugins.nav" },
+	{ import = "plugins.editor" },
+	{ import = "plugins.tools" },
+	{ import = "plugins.deps" },
+})
 
 -- Remap macro record to <leader>q (q is used by plugins)
 vim.keymap.set("n", "<leader>q", "q", { noremap = true, desc = "Record macro" })
