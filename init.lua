@@ -44,6 +44,13 @@ vim.g.mapleader = " "
 
 vim.keymap.set("n", "<Esc><Esc>", "<cmd>nohlsearch<cr>", { silent = true, desc = "Clear search highlight" })
 
+-- Send deletes to black hole register so they don't overwrite the yank register
+vim.keymap.set({ "n", "v" }, "d", '"_d', { noremap = true })
+vim.keymap.set({ "n", "v" }, "D", '"_D', { noremap = true })
+vim.keymap.set({ "n", "v" }, "c", '"_c', { noremap = true })
+vim.keymap.set({ "n", "v" }, "C", '"_C', { noremap = true })
+vim.keymap.set({ "n", "v" }, "x", '"_x', { noremap = true })
+
 -- Toggle term (Need to be configured as globals)
 -- Note: <F60> toggle is defined in vim-floaterm.lua keys spec to skip named floaterms
 vim.g.floaterm_keymap_new = "TT"
