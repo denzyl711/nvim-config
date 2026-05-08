@@ -4,14 +4,14 @@ return {
 		config = function()
 			require("lualine").setup({
 				options = {
-					theme = vim.g.tokyonight_theme,
-					component_separators = "|",
-					section_separators = { left = "", right = "" },
+					theme = "auto",
+					component_separators = { left = "|", right = "|" },
+          section_separators = { left = "|", right = "|" },
 					globalstatus = true,
 				},
 				sections = {
 					lualine_a = {
-						{ "mode", separator = { left = "" }, right_padding = 2 },
+						{ "mode", separator = { left = "|" }, right_padding = 2 },
 					},
 					lualine_b = { "branch", { "filename", path = 1 }, "diagnostics" },
 					lualine_c = { "fileformat" },
@@ -19,12 +19,12 @@ return {
 						{
 							require("noice").api.status.command.get,
 							cond = require("noice").api.status.command.has,
-							color = { fg = vim.g.colors.peach, bg = vim.g.colors.base },
+							color = { fg = "#ff9e64", bg = "#1a1b26" },
 						},
 					},
 					lualine_y = { "filetype", "progress" },
 					lualine_z = {
-						{ "location", separator = { right = "" }, left_padding = 2 },
+						{ "location", separator = { right = "|" }, left_padding = 2 },
 					},
 				},
 				tabline = {},
