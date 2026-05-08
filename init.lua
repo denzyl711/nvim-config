@@ -56,14 +56,6 @@ vim.g.floaterm_keymap_last = "TL"
 
 vim.keymap.set("t", "<Esc><Esc>", [[<C-\><C-n>]])
 
--- Setup theme configuration
-local theme_status, theme = pcall(require, "config.theme")
-if theme_status then
-	theme.setup()
-else
-	vim.notify("Failed to load theme configuration", vim.log.levels.WARN)
-end
-
 -- Window navigation mappings
 local opts = { noremap = true, silent = true }
 
@@ -130,6 +122,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{ import = "plugins.ui" },
+	{ import = "plugins.ui.themes" },
 	{ import = "plugins.git" },
 	{ import = "plugins.lsp" },
 	{ import = "plugins.nav" },

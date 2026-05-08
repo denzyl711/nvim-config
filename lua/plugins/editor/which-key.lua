@@ -71,6 +71,8 @@ return {
         -- Undotree
         { '<leader>u', desc = 'Toggle Undotree', mode = { 'n' } },
 
+        { '<leader>fT', desc = 'Switch theme', mode = { 'n' } },
+
         -- TODO Comments
         { '<leader>ft', desc = 'Find TODOs', mode = { 'n' } },
         { '<leader>fw', desc = 'Grep word under cursor', mode = { 'n' } },

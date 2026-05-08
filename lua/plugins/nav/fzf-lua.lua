@@ -13,6 +13,11 @@ return {
 			{ "<leader>gC", "<cmd>FzfLua git_commits<cr>", desc = "Git commits" },
 			{ "<leader>gb", "<cmd>FzfLua git_branches<cr>", desc = "Git branches" },
 			{ "<leader>gs", "<cmd>FzfLua git_status<cr>", desc = "Git status" },
+			{
+				"<leader>fT",
+				function() require("config.theme_picker").pick() end,
+				desc = "Switch theme",
+			},
 		},
 		opts = {},
 		config = function()
