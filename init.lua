@@ -42,6 +42,8 @@ vim.api.nvim_create_autocmd({ "TextChanged", "InsertLeave" }, {
 vim.keymap.set("n", "<Space>", "<Nop>", { silent = true, remap = false })
 vim.g.mapleader = " "
 
+vim.keymap.set("n", "<Esc><Esc>", "<cmd>nohlsearch<cr>", { silent = true, desc = "Clear search highlight" })
+
 -- Toggle term (Need to be configured as globals)
 -- Note: <F60> toggle is defined in vim-floaterm.lua keys spec to skip named floaterms
 vim.g.floaterm_keymap_new = "TT"

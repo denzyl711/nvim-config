@@ -21,7 +21,7 @@ return {
         desc = "Harpoon menu",
       },
       {
-        "<C-h>",
+        "<C-p>",
         function()
           local harpoon_list = require("harpoon"):list()
           local length = harpoon_list:length()
@@ -43,14 +43,15 @@ return {
             current_index = current_index - 1
           end
 
-          local file_to_open = harpoon_list:get(current_index).value
-          vim.cmd("badd " .. file_to_open)
-          vim.cmd("buffer " .. file_to_open)
+          local item = harpoon_list:get(current_index)
+          if not item or not item.value then return end
+          vim.cmd("badd " .. vim.fn.fnameescape(item.value))
+          vim.cmd("buffer " .. vim.fn.fnameescape(item.value))
         end,
         desc = "Previous harpoon",
       },
       {
-        "<C-l>",
+        "<C-n>",
         function()
           local harpoon_list = require("harpoon"):list()
           local length = harpoon_list:length()
@@ -72,9 +73,10 @@ return {
             current_index = current_index + 1
           end
 
-          local file_to_open = harpoon_list:get(current_index).value
-          vim.cmd("badd " .. file_to_open)
-          vim.cmd("buffer " .. file_to_open)
+          local item = harpoon_list:get(current_index)
+          if not item or not item.value then return end
+          vim.cmd("badd " .. vim.fn.fnameescape(item.value))
+          vim.cmd("buffer " .. vim.fn.fnameescape(item.value))
         end,
         desc = "Next harpoon",
       },

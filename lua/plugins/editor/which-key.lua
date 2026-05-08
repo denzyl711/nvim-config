@@ -64,6 +64,8 @@ return {
 
         -- Harpoon
         { '<leader>h', desc = 'Add to Harpoon', mode = { 'n' } },
+        { '<C-n>', desc = 'Next Harpoon', mode = { 'n' } },
+        { '<C-p>', desc = 'Previous Harpoon', mode = { 'n' } },
 
         -- Aerial
         { '<leader>a', desc = 'Toggle Aerial', mode = { 'n' } },
