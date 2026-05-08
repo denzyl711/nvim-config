@@ -42,6 +42,9 @@ vim.api.nvim_create_autocmd({ "TextChanged", "InsertLeave" }, {
 vim.keymap.set("n", "<Space>", "<Nop>", { silent = true, remap = false })
 vim.g.mapleader = " "
 
+-- Clear <C-t> tag-stack default (used as floaterm prefix instead)
+vim.keymap.set("n", "<C-t>", "<Nop>", { noremap = true, silent = true })
+
 vim.keymap.set("n", "<Esc><Esc>", "<cmd>nohlsearch<cr>", { silent = true, desc = "Clear search highlight" })
 
 -- Send deletes to black hole register so they don't overwrite the yank register
@@ -50,15 +53,6 @@ vim.keymap.set({ "n", "v" }, "D", '"_D', { noremap = true })
 vim.keymap.set({ "n", "v" }, "c", '"_c', { noremap = true })
 vim.keymap.set({ "n", "v" }, "C", '"_C', { noremap = true })
 vim.keymap.set({ "n", "v" }, "x", '"_x', { noremap = true })
-
--- Toggle term (Need to be configured as globals)
--- Note: <F60> toggle is defined in vim-floaterm.lua keys spec to skip named floaterms
-vim.g.floaterm_keymap_new = "TT"
-vim.g.floaterm_keymap_kill = "TD"
-vim.g.floaterm_keymap_next = "TK"
-vim.g.floaterm_keymap_prev = "TJ"
-vim.g.floaterm_keymap_first = "TH"
-vim.g.floaterm_keymap_last = "TL"
 
 -- Dedicated Copilot floaterm toggle (Caps+G = option + fn + f11 via Karabiner)
 -- Note: keymap is defined in vim-floaterm.lua keys spec to avoid lazy-loading conflicts

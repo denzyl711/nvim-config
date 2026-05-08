@@ -31,12 +31,12 @@ return {
 
         -- Terminal (floaterm)
         { '<leader>t', group = '[T]erminal', mode = { 'n' } },
-        { '<leader>tt', desc = 'New Terminal', mode = { 'n' } },
-        { '<leader>td', desc = 'Kill Terminal', mode = { 'n' } },
-        { '<leader>tk', desc = 'Next Terminal', mode = { 'n' } },
-        { '<leader>tj', desc = 'Previous Terminal', mode = { 'n' } },
-        { '<leader>tl', desc = 'Last Terminal', mode = { 'n' } },
-        { '<leader>th', desc = 'First Terminal', mode = { 'n' } },
+        { '<C-t>n', desc = 'New Terminal', mode = { 'n', 't' } },
+        { '<C-t>d', desc = 'Kill Terminal', mode = { 'n', 't' } },
+        { '<C-t>k', desc = 'Next Terminal', mode = { 'n', 't' } },
+        { '<C-t>j', desc = 'Previous Terminal', mode = { 'n', 't' } },
+        { '<C-t>l', desc = 'Last Terminal', mode = { 'n', 't' } },
+        { '<C-t>h', desc = 'First Terminal', mode = { 'n', 't' } },
         { '<F59>', desc = 'Hyper+G — Copilot terminal', mode = { 'n', 't', 'i' } },
         { '<F60>', desc = 'Hyper+T — toggle terminal', mode = { 'n', 't', 'i' } },
 
