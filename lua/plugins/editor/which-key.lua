@@ -77,7 +77,7 @@ return {
 
         -- TODO Comments
         { '<leader>ft', desc = 'Find TODOs', mode = { 'n' } },
-        { '<leader>fw', desc = 'Grep word under cursor', mode = { 'n' } },
+        { '<leader>fG', desc = 'Live grep in dir', mode = { 'n' } },
         { '<leader>fr', desc = 'LSP references', mode = { 'n' } },
         { '<leader>fd', desc = 'LSP definitions', mode = { 'n' } },
 

@@ -16,11 +16,14 @@ return {
 			}
 			require("nvim-treesitter.install").install(langs)
 
-			-- Enable native treesitter highlighting and indentation
+			-- Enable native treesitter highlighting, indentation and folding
 			vim.api.nvim_create_autocmd("FileType", {
 				callback = function(ev)
 					pcall(vim.treesitter.start, ev.buf)
 					vim.bo[ev.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+					vim.wo.foldmethod = "expr"
+					vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+					vim.wo.foldenable = false
 				end,
 			})
 		end,
