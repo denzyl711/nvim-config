@@ -46,7 +46,7 @@ return {
         { '<leader>gC', desc = 'Git commits', mode = { 'n' } },
         { '<leader>gb', desc = 'Git branches', mode = { 'n' } },
         { '<leader>gs', desc = 'Git status', mode = { 'n' } },
-        { '<leader>ggb', desc = 'Toggle Git Blame', mode = { 'n' } },
+        { '<leader>gB', desc = 'Toggle Git Blame', mode = { 'n' } },
 
         -- Diagnostics (Trouble)
         { '<leader>x', group = 'Diagnostics', mode = { 'n' } },

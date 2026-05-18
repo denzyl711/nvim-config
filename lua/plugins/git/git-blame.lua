@@ -3,7 +3,7 @@ return {
 		"f-person/git-blame.nvim",
 		cmd = { "GitBlameToggle", "GitBlameEnable", "GitBlameDisable" },
 		keys = {
-			{ "<leader>ggb", "<cmd>GitBlameToggle<cr>", desc = "Toggle Git Blame" },
+			{ "<leader>gB", "<cmd>GitBlameToggle<cr>", desc = "Toggle Git Blame" },
 		},
 		config = function()
 			require("gitblame").setup({
