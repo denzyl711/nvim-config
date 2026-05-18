@@ -33,9 +33,6 @@ return {
 		opts = {},
 		config = function()
 			require("fzf-lua").setup({})
-			if vim.bo.filetype == "" then
-				require("fzf-lua").files({ winopts = { fullscreen = true } })
-			end
 		end,
 	},
 }

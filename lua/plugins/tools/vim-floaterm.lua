@@ -54,7 +54,7 @@ end
 
 --- Ensure the AI CLI floaterm and a plain shell both exist (hidden)
 local function ensure_ai_and_shell()
-	vim.cmd("FloatermNew --silent --name=" .. AI_TERM_NAME .. " --autoclose=0 " .. AI_CLI .. " --continue")
+	vim.cmd("FloatermNew --silent --name=" .. AI_TERM_NAME .. " --autoclose=0 " .. AI_CLI)
 	vim.cmd("FloatermHide " .. AI_TERM_NAME)
 	if not find_unnamed_bufnr() then
 		vim.cmd("FloatermNew --silent")
