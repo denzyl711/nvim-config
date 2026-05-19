@@ -74,6 +74,7 @@ return {
         { '<leader>u', desc = 'Toggle Undotree', mode = { 'n' } },
 
         { '<leader>fT', desc = 'Switch theme', mode = { 'n' } },
+        { '<leader>``', desc = 'Toggle transparency', mode = { 'n' } },
 
         -- TODO Comments
         { '<leader>ft', desc = 'Find TODOs', mode = { 'n' } },
