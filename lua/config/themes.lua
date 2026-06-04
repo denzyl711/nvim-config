@@ -34,4 +34,12 @@ return {
 		plugin = "vague.nvim",
 		variants = { "vague" },
 	},
+	["rose-pine"] = {
+		plugin = "rose-pine",
+		variants = { "rose-pine", "rose-pine-moon", "rose-pine-dawn" },
+	},
+	["everforest"] = {
+		plugin = "everforest",
+		variants = { "everforest" },
+	},
 }
