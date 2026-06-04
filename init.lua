@@ -9,6 +9,9 @@ vim.opt.runtimepath:append(vim.fn.stdpath("data") .. "/site")
 vim.opt.relativenumber = true
 vim.opt.number = true
 
+-- Wrap at word boundaries, not mid-word
+vim.opt.linebreak = true
+
 -- Enable spellcheck
 vim.opt.spelllang = "en_au"
 vim.opt.spell = true

@@ -1,0 +1,7 @@
+{
+  "Todo item": {
+    "prefix": "todo",
+    "body": "- [ ] [$1] $2",
+    "description": "New todo with tag"
+  }
+}
