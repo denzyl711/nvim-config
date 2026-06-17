@@ -92,6 +92,9 @@ end
 -- Buffer management
 pcall(require, "config.buffers")
 
+-- Simple keymaps
+pcall(require, "config.keymaps")
+
 -- Lazy cache python path (only compute once when needed)
 local python_path_cache = nil
 local function get_python_path()
