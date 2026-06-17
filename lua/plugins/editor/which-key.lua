@@ -55,18 +55,6 @@ return {
         { '<leader>xl', desc = 'Location List', mode = { 'n' } },
         { '<leader>xq', desc = 'Quickfix List', mode = { 'n' } },
 
-        -- Tests (Neotest)
-        { '<leader>n', group = '[N]eotest', mode = { 'n' } },
-        { '<leader>nn', desc = 'Run Nearest Test', mode = { 'n' } },
-        { '<leader>nf', desc = 'Run File Tests', mode = { 'n' } },
-        { '<leader>ns', desc = 'Test Summary', mode = { 'n' } },
-        { '<leader>no', desc = 'Test Output Panel', mode = { 'n' } },
-
-        -- Harpoon
-        { '<leader>h', desc = 'Add to Harpoon', mode = { 'n' } },
-        { '<C-n>', desc = 'Next Harpoon', mode = { 'n' } },
-        { '<C-p>', desc = 'Previous Harpoon', mode = { 'n' } },
-
         -- Aerial
         { '<leader>a', desc = 'Toggle Aerial', mode = { 'n' } },
 

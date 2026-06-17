@@ -17,6 +17,8 @@ return {
             adapters = {
                 require("neotest-python")({
                     dap = { justMyCode = false },
+                    -- Lazy evaluation so python path is resolved at runtime
+                    python = function() return vim.g.python_path() end,
                 }),
             },
         })
